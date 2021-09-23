@@ -1,0 +1,47 @@
+from turtle import Turtle , Screen
+
+my_screen=Screen()
+print(my_screen.canvheight)
+
+Minny=Turtle()
+Timmy=Turtle()
+# print(Minny)
+Minny.shape("turtle")
+Minny.color("blue")
+print(Minny.position())
+
+Minny.left(90)
+Minny.forward(55)
+
+Minny.circle(20)
+Minny.backward(45)
+Minny.right(110)
+
+Timmy.begin_poly()
+Timmy.shape("turtle")
+Timmy.color("coral")
+# Timmy.hideturtle()
+Timmy.setposition(29,29)
+
+Timmy.pencolor("green")
+Timmy.pendown()
+Timmy.begin_fill()
+Timmy.forward(30)
+Timmy.left(90)
+Timmy.forward(30)
+Timmy.left(90)
+Timmy.forward(30)
+Timmy.left(90)
+Timmy.forward(30)
+Timmy.end_fill()
+Timmy.pencolor("yellow")
+Timmy.penup()
+Timmy.home()
+Timmy.end_poly()
+p=Timmy.get_poly()
+print(p)
+print(Minny.position())
+
+Linov=Turtle()
+Linov=Minny.clone()
+my_screen.exitonclick()
