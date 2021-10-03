@@ -59,3 +59,14 @@ class Snake:
     def snake_right(self):
         if self.head.heading() != LEFT:
             self.head.setheading(RIGHT)
+
+    def reset_snake(self):
+        
+        # sending segments away from screen, once snake is died
+        for segment in self.segments:
+            segment.goto(800,800)  
+
+        # recreate the snake when our one round is getting over.
+        self.segments.clear()
+        self.create_snake()
+        self.head = self.segments[0]

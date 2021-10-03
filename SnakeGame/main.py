@@ -37,16 +37,15 @@ while is_game_on:
     if snake.head.xcor() > 288 or snake.head.xcor() < -288 or \
         snake.head.ycor() > 288 or snake.head.ycor() < -285 : 
 
-        is_game_on = False
-        scoreboard.game_over()
-
+        # is_game_on = False (When you want to use game over)
+        snake.reset_snake()
+        scoreboard.reset_game()
+        
     # Detect collision with own tail
     for segment in snake.segments[1:] :
         if snake.head.distance(segment) < 10:
-            is_game_on = False
-            scoreboard.game_over()
-
-            
-
+            # is_game_on = False  (When you want to use game over)
+            snake.reset_snake()
+            scoreboard.reset_game()
         
 my_screen.exitonclick()
